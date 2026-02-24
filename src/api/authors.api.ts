@@ -115,4 +115,3 @@ app.put('/:id', zValidator('param', idSchema), zValidator('json', authorSchema),
 //npx prisma studio
 //npx prisma db push
 //npx prisma migrate reset
-//

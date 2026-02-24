@@ -36,6 +36,14 @@ app.get('/', (c) => {
       {
         method: 'post',
         description: 'create new news'
+      },
+      {
+        method: 'put',
+        description: 'update the news'
+      },
+      {
+        method: 'delete',
+        description: 'delete'
       }
     ]
   })
