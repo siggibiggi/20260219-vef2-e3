@@ -1,6 +1,7 @@
 -- CreateTable
 CREATE TABLE "News" (
     "id" SERIAL NOT NULL,
+    "slug" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "excerpt" TEXT NOT NULL,
     "content" TEXT NOT NULL,
@@ -18,6 +19,9 @@ CREATE TABLE "Author" (
 
     CONSTRAINT "Author_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "News_slug_key" ON "News"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Author_email_key" ON "Author"("email");

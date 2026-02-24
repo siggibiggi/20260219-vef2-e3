@@ -2,6 +2,7 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { prettyJSON } from 'hono/pretty-json'
 import { app as authorsApi } from './api/authors.api.js';
+import { app as newsApi } from './api/news.api.js';
 
 const app = new Hono()
 
@@ -19,16 +20,29 @@ app.get('/', (c) => {
         description: 'create new author'
       },
       {
-        method: 'put'
+        method: 'put',
+        description: 'update ;-)'
       },
       {
-        method: 'delete'
+        method: 'delete',
+        description: 'you know, you get it'
+      }
+    ],
+    '/news': [
+      {
+        method: 'get',
+        description: 'get all news, paginated'
+      },
+      {
+        method: 'post',
+        description: 'create new news'
       }
     ]
   })
 })
 
 app.route('/authors', authorsApi);
+app.route('/news', newsApi);
 
 
 
